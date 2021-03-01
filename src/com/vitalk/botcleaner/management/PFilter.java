@@ -1,5 +1,6 @@
 package com.vitalk.botcleaner.management;
 
+import com.vitalk.botcleaner.BotCleaner;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
 import java.util.ArrayList;
@@ -15,6 +16,20 @@ public class PFilter {
         uuidsTryingToLogIn.add(player.getUniqueId());
         nameTryingToLogIn.add(player.getName());
         IPsTryingToLogIn.add(player.getSocketAddress().toString());
+    }
+
+    public String printUser(ProxiedPlayer player){
+        String tot = "";
+        if(nameTryingToLogIn.contains(player.getName())){
+            tot = "Name : {" + player.getName() + "}";
+        }
+        if(uuidsTryingToLogIn.contains(player.getUniqueId())){
+            tot = tot + ", UUID : {" + player.getUniqueId() + "}";
+        }
+        if(IPsTryingToLogIn.contains(player.getSocketAddress().toString())){
+            tot = tot + ", IP : {" + player.getSocketAddress().toString() + "}, successfully added to list";
+        }
+        return tot;
     }
 
     public void unLogUser(ProxiedPlayer player){

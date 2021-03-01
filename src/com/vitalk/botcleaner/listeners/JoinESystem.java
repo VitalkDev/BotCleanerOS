@@ -11,6 +11,7 @@ public class JoinESystem implements Listener {
     @EventHandler
     public void onLogin(PostLoginEvent e){
         BotCleaner.getInstance().getpFilter().logUser(e.getPlayer());
+        BotCleaner.getInstance().getLogger().info(BotCleaner.getInstance().getpFilter().printUser(e.getPlayer()));
     }
 
     @EventHandler
