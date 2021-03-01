@@ -1,0 +1,4 @@
+name: BotCleaner
+author: Vitalk
+version: 1.0
+main: com.vitalk.botcleaner.BotCleaner
